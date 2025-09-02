@@ -6,7 +6,7 @@
     --star: #cfe9ff;
   }
   *{box-sizing:border-box}
-  html,body{height:1000%}
+  html,body{height:310%}
   body{
     margin:0;
     font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
@@ -541,4 +541,5 @@ nav ul li.has-submenu > a::after {
 .project-link:hover {
   border-color: #4a90e2;
 }
+
 
