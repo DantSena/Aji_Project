@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="his-project.css">
+  <style>
+    /* Override warna background agar lebih biru malam */
+    body{
+    background: linear-gradient(180deg, #020c3a 0%, #041a55 40%, #062e63 75%, #0a3a68 100%);
+    height: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    }  
+
+    /* shapes */
+    .shapes { position:fixed; inset:0; pointer-events:none; z-index:5; overflow:hidden; }
+    .shape {
+      position:absolute; width:12px; height:12px; opacity:0.7;
+      animation: drift-shape linear infinite;
+    }
+    .shape.circle{ border-radius:50%; background:#8bbcff; }
+    .shape.triangle{
+      width:0; height:0;
+      border-left:7px solid transparent;
+      border-right:7px solid transparent;
+      border-bottom:12px solid #b7d6ff;
+      background:none;
+    }
+    .shape.star{
+      background: radial-gradient(circle, #ffffff 40%, transparent 41%);
+      border-radius:50%;
+      box-shadow: 0 0 8px rgba(255,255,255,0.8);
+      width:10px; height:10px;
+    }
+    @keyframes drift-shape{
+      from{ transform: translateY(0) translateX(0) rotate(0deg); opacity:1 }
+      to{ transform: translateY(-120vh) translateX(40px) rotate(360deg); opacity:0 }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="fog" aria-hidden="true">
+    <div class="layer"></div>
+    <div class="layer layer-2"></div>
+    <div class="layer layer-3"></div>
+  </div>
+
+  <!-- Shapes floating -->
+  <div class="shapes" aria-hidden="true">
+    <script>
+      (function(){
+        const container = document.currentScript.parentElement;
+        const types = ['circle','triangle','star'];
+        const count = 35;
+        for(let i=0;i<count;i++){
+          const el = document.createElement('div');
+          const type = types[Math.floor(Math.random()*types.length)];
+          el.className = 'shape '+type;
+          el.style.left = Math.random()*100 + 'vw';
+          el.style.top = (100+Math.random()*50) + 'vh';
+          el.style.animationDuration = (15+Math.random()*20)+'s';
+          el.style.animationDelay = (-Math.random()*20)+'s';
+          container.appendChild(el);
+        }
+      })();
+    </script>
+  </div>
+
+  <!-- Dots floating -->
+  <div class="dots" aria-hidden="true">
+    <script>
+      (function(){
+        const container = document.currentScript.parentElement;
+        const count = 50;
+        for(let i=0;i<count;i++){
+          const el = document.createElement('div');
+          el.className = 'dot';
+          el.style.left = Math.random()*100 + 'vw';
+          el.style.top = Math.random()*100 + 'vh';
+          el.style.animationDuration = (20+Math.random()*30)+'s';
+          el.style.animationDelay = (-Math.random()*30)+'s';
+          container.appendChild(el);
+        }
+      })();
+    </script>
+  </div>
+
+  <div class="vignette" aria-hidden="true"></div>
+
+  <header class="headerh">
+    <div class="logo-area">
+      <section class="logos">
+        <img src="logg.png" alt="Logo" class="logo">
+      </section>
+      <h1>Dantaatn~</h1>
+    </div>
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="https://trakteer.id/ajisudahvaksin?fbclid=PAZXh0bgNhZW0CMTEAAad3_3MZtPmyjzEl2mlING6vWweWbkXrLfOFV-1tX0SZO-iSvPp_S9xIDjZeGg_aem_KkVp6Wb48ZlSynUyNg6A4w.">TRAKTEER</a></li>
+        <li><a href="https://www.instagram.com/aj1_nugroho/">INSTAGRAM</a></li>
+        <li><a href="Konten.html">KONTENT GAME</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="centera">
+    <img src="sad.jpg" alt="Foto diri" class="profile">
+    <p>ㅤㅤㅤ</p>
+    <p>ㅤㅤㅤ</p>
+    <div class="about">
+      <div>
+        <h1 class="judul-intro asap"><strong>who is he..?, I will tell you</strong></h1>
+      </div>
+      <p>ㅤㅤㅤ</p>
+      <p>Namanya Gadhing Aji Tirta Nugraha. ia adalah pribadi yang peduli, Freindly, dan praktis. Menikmati hal-hal yang sederhana namun terorganisir karena memberi rasa tenang dan fokus, senang aja rasanya (ujarnya). ia berusaha menjadi sosok yang bisa diandalkan dan sering memikirkan hal-hal kecil secara sangat mendalam oleh karena itu ia sering terlihat melamun diam terlihat tidak peduli. barangkali ketika kamu bertemu dengannya pasti terlihat cuek dan diam saja kan, padahal aslinya ia sadar tapi sedang berfikir keras, karena bentuk dari salah satu kepribadiannya 😅. ia suka saat malam hari datang sekaligus menjadi tema web ini entah mengapa rasanya tenang aja apa mungkin karena emang ia anak IT Idk 🙂‍↔S.. and honestly he afraid of lightning 🥲</p>
+    </div>
+  </section>
+
+  <section class="centeraa">
+    <p>Ia sekarang berada di kelas XI-X Eltenity Terra. duduk di paling belakang karena telat war bangku di awal. ketika jamkos ia mendengarkan musik sesuai hobinya kalau tidak begitu ia akan tidur untuk menghemat energi di tempat yang sangat menguras batin tsb. awal yang ragu untuk meneruskan ekstra, akhirnya ia menetap bersama teman-teman nya 🤝 yang akan tetap tidak terpisah karena naik kelas 11 walaupun kenyataan peran teman temannya di kehidupan ekstra akan teerhenti di kelas 12. dalam ekstra juga ia mulai berubah menjadi sosok yang lebih baik, dan banyak sekali pengalaman berharga yang ia dapatkan. dan dari ekstraitulah ia mengalami "PUNCAK?" dari masa-masa SMA nya.</p>
+  </section>
+
+  <p>ㅤㅤㅤ</p>
+  <p>ㅤㅤㅤ</p>
+
+  <section class="judul">
+        <h1 class="judul-intro asap"><strong>His Project</strong></h1>
+  </section>
+
+  <!-- His Project Section -->
+  <section id="his-project" class="his-project-section">
+    <div class="project-slider">
+      <button class="slider-btn prev-btn" aria-label="Previous Project">&#8592;</button>
+      <div class="project-cards-container">
+        <div class="project-card active" data-index="0">
+          <img src="konten.jpg" alt="Kontent Creator" class="project-image" />
+          <h3>Kontent Creator</h3>
+          <p>Sebelumnya ia juga pernah jadi kontent kreator sebuah game, hidup NoLife ternyata juga abisa membuat seseorang menjadi jati dirinya sendiri dan itulah yang dia alami. anda dapat melihat konten buatanya di header atas bagian kontent game</p>
+          <div class="project-links">
+          </div>
+        </div>
+        <div class="project-card" data-index="1">
+          <img src="web.jpg" alt="Web Editor" class="project-image" />
+          <h3>Web Editor</h3>
+          <p>U know lah pastinya dia ngapain dengan website website itu, semenjak masuk sma ia kecanduan bermain dengan hal itu. bahkan ia rela duduk seharian memandang layar hanya untuk menyelesaikan projectnya. and he like it</p>
+          <div class="project-links">
+          </div>
+        </div>
+        <div class="project-card" data-index="2">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyZYpAxrkXGagLejpf7vA3evkBtsD71IFybw&s" alt="Teknik IT" class="project-image" />
+          <h3>Teknik IT</h3>
+          <p>Ia juga menguasi teknik IT terutama bongkar pasang elektro. ia menguasai teknik tersebut bermodal logika dan insting yang kuat, canda.. ia sebenarnya dapat pengalaman dari orangtuanya. walaupun kadang barangnya bentuknya aneh tapi tetap berfungsi</p>
+          <div class="project-links">
+          </div>
+        </div>
+        <div class="project-card" data-index="3">
+          <img src="data:image/jpeg;base64,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" alt="Avehistorian" class="project-image" />
+          <h3>Avehistorian</h3>
+          <p>Ia juga peminat sejarah, terutama sejarah dunia mengenai perang, bahkan ia sudah hafal setiap detail sejarah perang sampai ke lagu lagunya hampir ia hafal. sejarah juga memberi ia pandangan mengenai masa lalu sebagai pengalaman tambahan </p>
+          <div class="project-links">
+          </div>
+        </div>
+      </div>
+      <button class="slider-btn next-btn" aria-label="Next Project">&#8594;</button>
+    </div>
+  </section>
+
+  <script>
+    (function(){
+      const cards = document.querySelectorAll('.project-card');
+      const prevBtn = document.querySelector('.prev-btn');
+      const nextBtn = document.querySelector('.next-btn');
+      let currentIndex = 0;
+
+      function updateCards(index) {
+        cards.forEach(card => card.classList.remove('active'));
+        cards[index].classList.add('active');
+      }
+
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+        updateCards(currentIndex);
+      });
+
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % cards.length;
+        updateCards(currentIndex);
+      });
+
+      updateCards(currentIndex);
+    })();
+  </script>
+
+<footer>
+  <p>&copy; 2025 Aji's Web | Dibuat dengan 💓🌙😇</p>
+</footer>
+
+</body>
+</html>
