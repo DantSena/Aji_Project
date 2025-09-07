@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>More</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* shapes */
+    .shapes { position:fixed; inset:0; pointer-events:none; z-index:5; overflow:hidden; }
+    .shape {
+      position:absolute; width:12px; height:12px; opacity:0.7;
+      animation: drift-shape linear infinite;
+    }
+    .shape.circle{ border-radius:50%; background:#8bbcff; }
+    .shape.triangle{
+      width:0; height:0;
+      border-left:7px solid transparent;
+      border-right:7px solid transparent;
+      border-bottom:12px solid #b7d6ff;
+      background:none;
+    }
+    .shape.star{
+      background: radial-gradient(circle, #ffffff 40%, transparent 41%);
+      border-radius:50%;
+      box-shadow: 0 0 8px rgba(255,255,255,0.8);
+      width:10px; height:10px;
+    }
+    @keyframes drift-shape{
+      from{ transform: translateY(0) translateX(0) rotate(0deg); opacity:1 }
+      to{ transform: translateY(-120vh) translateX(40px) rotate(360deg); opacity:0 }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="logo.png">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <!-- Shapes floating -->
+  <div class="shapes" aria-hidden="true">
+    <script>
+      (function(){
+        const container = document.currentScript.parentElement;
+        const types = ['circle','triangle','star'];
+        const count = 35;
+        for(let i=0;i<count;i++){
+          const el = document.createElement('div');
+          const type = types[Math.floor(Math.random()*types.length)];
+          el.className = 'shape '+type;
+          el.style.left = Math.random()*100 + 'vw';
+          el.style.top = (100+Math.random()*50) + 'vh';
+          el.style.animationDuration = (15+Math.random()*20)+'s';
+          el.style.animationDelay = (-Math.random()*20)+'s';
+          container.appendChild(el);
+        }
+      })();
+    </script>
+  </div>
+
+  <!-- Dots floating -->
+  <div class="dots" aria-hidden="true">
+    <script>
+      (function(){
+        const container = document.currentScript.parentElement;
+        const count = 50;
+        for(let i=0;i<count;i++){
+          const el = document.createElement('div');
+          el.className = 'dot';
+          el.style.left = Math.random()*100 + 'vw';
+          el.style.top = Math.random()*100 + 'vh';
+          el.style.animationDuration = (20+Math.random()*30)+'s';
+          el.style.animationDelay = (-Math.random()*30)+'s';
+          container.appendChild(el);
+        }
+      })();
+    </script>
+  </div>
+
+  <div class="vignette" aria-hidden="true"></div>
+
+  <header>
+    <nav id="nav-menu">
+      <a href="main.html">HOME</a>
+      <a href="https://trakteer.id/ajisudahvaksin">KONTEN GAME</a>
+      <a href="https://www.instagram.com/aj1_nugroho/" target="_blank">INSTAGRAM</a>
+      <a href="#">OTHERS</a>
+    </nav>
+  </header>
+
+    <div class="parenth">
+      <div class="div1">
+        <p class="label">OTHERS PAGE</p>
+        <h1>Other Facts About Me</h1>
+      </div>
+      <div class="div2">Dulu waktu kecil aku gendut, tapi lama-lama turun juga. Aku sering banget main sama teman komplek di luar sampai dimarahin orang tua, kulit jadi ireng kena matahari. Karena rumahku deket sungai, nggak jarang aku nyebur gara gara hal konyol, kayak ngebut naik sepeda terus nyusruk. Semua berubah sejak smartphone mulai hadir, cara bersenang senang pun ikut berubah. Puncaknya pas KoPiEd19, hidupku auto jadi no life, cuma di rumah scroll sosmed dan main game. Aneh but true, kulitku yang dulu ireng malah jadi cerah.</div>
+      <div class="div3">Dari hidup no life itu justru banyak hal baru yang aku dapat. Mulai dari belajar bahasa Inggris, sejarah, sampai nyemplung ke komunitas online. Algoritmaku lebih sering narik konten luar negeri dibanding lokal yang menurutku banyak nggak berbobot. Tapi jujur, aku juga punya kelemahan. Dari SMP sampai sekarang aku selalu kurang di bidang agama dan olahraga, makanya agak berat kalau ada kegiatan yang berhubungan sama itu. Kadang aku mikir maybe aku lebih cocok di dunia perkuliahan??????, tempat buat ngembangin minat dan bakat tanpa banyak halangan.</div>
+      <div class="div4">Ada juga momen ketika aku jadi overthinking. Saat cemas, stress, atau salting, aku sering keliatan diam aja padahal di dalam kepalaku rame banget. Kadang aku bahkan ngobrol sama diriku sendiri di pikiran. Bukan berarti aku cuek sama sekitar, cuma itu cara buat nenangin diri. Buatku masa sekolah ini naik turun, kadang fun kadang flat. tetaplah berhati hati. sehat selalu orang baik, and honestly I’m just happy to know you. (gaksah baper)</div>
+      <div class="div5">Kamu kalau badmood ngapain? lesu,marah,tidur?. mana maen jalan jalan lah 27 kilo nganjuk-gondang-mungkung-rejoso-talang-mlorah-nganjuk. semakin badmood semakin jauh..  <strong>(There's a lot I want to say but I don't know where to start... ;)</strong></div>
+    </div>
+    <div class="parenth">
+      <div class="div1">
+        <h1>Yapping</h1>
+      </div>
+    
+      <div class="div2">
+        Waktu SD aku sekolah di SD Negeri 1 Nganjuk Tahun 2015. lumayan unik karena rumahku persis di belakang sekolah, sebelahan sama toilet, So if I wanted to go in, I just have to jump over the fence :v. Kelas 1 dan 2 masih berasa kayak TK, cuma lebih interaktif dengan materi baru. Pas kelas 3 sampai 5 aku agak keteteran karena kurang fokus, jadi banyak materi yang ketinggalan. Lanjut ke kelas 6, masa penentuan pas zaman Copid19, suasananya abu-abu banget, tapi akhirnya aku tetap bisa lolos juga :)
+      </div>
+    
+      <div class="div3">
+        SMP. Setelah lulus dari SD aku lanjut ke SMP Negeri 3 Nganjuk. Jujur aja aku nggak tahu pasti kenapa bisa masuk sini, mungkin karena ada kenalan guru. Lepas dari masa NoLife gara gara Covid, aku mulai belajar adaptasi sama lingkungan baru. Awalnya sih agak pasif, tapi lama-lama mulai ada perubahan. Entah kenapa di sini aku lebih gampang nangkep pelajaran dibanding teman-teman lain. Kalau mereka biasanya masih mikir lama, aku malah bisa langsung nyambung sama topik yang dibahas. Dari situlah muncul julukan “pintar” dan sejenisnya, walaupun jujur aja aku masih agak bodong di teknik gara-gara ketinggalan materi waktu SD.
+      </div>
+    
+      <div class="div4">
+        Nggak kerasa tiba-tiba udah masuk SMA. Lanjutan dari SMP, aku akhirnya nyangkut di SMA Negeri 1 Nganjuk. Dulu sempet bingung mau ambil SMK atau SMA, tapi yaa takdir bawa aku ke sini. awalnya agak kurang enak sih, soalnya pertemanan Gugus rada kaku dan nggak terlalu akrab. Tapi akhirnya aku ditempatin di kelas pojok X-11, and that's where I feel really grateful. Lingkungannya positif, gampang banget buat kenalan sama orang baru, apalagi ada anak ekstrovert yang mungut aku gabung kebetulan dia juga temen Gugus. Kebiasaan dari SMP masih kebawa, aku jadi lebih aktif dan gampang nangkep pelajaran. Malah sering ditakuti waktu ngasih pertanyaan ke kelompok yang presentasi, nggak tahu kenapa wkwk. from then on, people called me 'Professor'. Perjalanan masih panjang, dan mungkin segini dulu ceritanya.
+      </div>
+    
+      <div class="div5">
+        Ekstra? Menengok lagi ke masa lalu, sejak kecil aku udah kenal sama teknologi komputer dan laptop jadi temen mainku. Lumayan lah ada basic TKJ dikit meski nggak keterima di SMK, tapi ternyata masih ada jalan lain pas SMA lewat Ekstrakurikuler Informatic Smasa Community. Awalnya kupikir bakal banyak oprek-oprek, tapi ternyata lebih ke arah pemahaman intelektual. Nggak masalah sih, toh aku juga udah punya pengalaman sendiri soal itu. Dulu sempet ragu buat lanjut, tapi akhirnya aku menetap di sini bareng temen temen baru yang bakal tetap bareng naik ke kelas 11. Dari sinilah aku mulai banyak berubah, jadi pribadi yang lebih baik, dapet banyak pengalaman berharga, dan bisa dibilang ini juga “Peak???” dari masa-masa SMA ku.   <strong>(Seriously? You read up to this point?)</strong>
+      </div>
+    </div>
+  <!-- Modal for full text -->
+  <div id="textModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+    <div class="modal-content">
+      <button id="closeModal" class="modal-close" aria-label="Close modal">&times;</button>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc"></p>
+    </div>
+  </div>
+  
+<footer>
+  <p>&copy; 2025 Dantaatn ~ Ajie Production </p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('nav-menu');
+    nav.classList.toggle('active');
+  }
+
+  // Scroll animation using Intersection Observer
+  document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.portfolio-card');
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+
+    // Portfolio image cycling for all cards
+    const portfolioImageSets = {
+      1: ['a2.jfif', 'a1.jfif', 'a3.jfif', 'a4.jfif'],
+      2: ['p1.png', 'p2.jfif', 'p3.jpg'],
+      3: ['tinkerer.png', 't2.jfif'],
+      4: ['k1.png', 'k2.png', 'k3.png', 'k4.png'],
+      5: ['w1.png', 'w2.png', 'w3.png', 'w4.png'],
+      6: ['f1.jfif', 'f2.jfif', 'f3.jfif', 'f4.jfif']
+    };
+
+    const intervals = {};
+    const currentIndices = {};
+
+    function startImageCycle(cardId) {
+      if (intervals[cardId]) return; // already running
+      intervals[cardId] = setInterval(() => {
+        currentIndices[cardId] = (currentIndices[cardId] + 1) % portfolioImageSets[cardId].length;
+        const imgElement = document.getElementById('img' + cardId);
+        imgElement.src = portfolioImageSets[cardId][currentIndices[cardId]];
+      }, 5000);
+    }
+
+    function stopImageCycle(cardId) {
+      clearInterval(intervals[cardId]);
+      intervals[cardId] = null;
+    }
+
+    Object.keys(portfolioImageSets).forEach(cardId => {
+      currentIndices[cardId] = 0;
+      const imgElement = document.getElementById('img' + cardId);
+      imgElement.addEventListener('mousedown', () => stopImageCycle(cardId));
+      imgElement.addEventListener('mouseup', () => {
+        if (!intervals[cardId]) {
+          startImageCycle(cardId);
+        }
+      });
+      startImageCycle(cardId);
+    });
+
+    // Truncate text to 1/4 length and add "Baca lebih Lanjut" button
+    cards.forEach(card => {
+      const p = card.querySelector('p');
+      const fullText = p.textContent.trim();
+      const quarterLength = Math.floor(fullText.length / 4);
+      const truncatedText = fullText.slice(0, quarterLength) + (fullText.length > quarterLength ? '...' : '');
+      p.textContent = truncatedText;
+
+      const readMoreBtn = document.createElement('button');
+      readMoreBtn.textContent = 'Baca lebih Lanjut';
+      readMoreBtn.className = 'view-btn';
+      readMoreBtn.setAttribute('aria-expanded', 'false');
+      readMoreBtn.addEventListener('click', () => {
+        const modal = document.getElementById('textModal');
+        const modalTitle = modal.querySelector('#modalTitle');
+        const modalDesc = modal.querySelector('#modalDesc');
+        modalTitle.textContent = card.querySelector('h3').textContent;
+        modalDesc.textContent = fullText;
+        modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
+        readMoreBtn.setAttribute('aria-expanded', 'true');
+      });
+      card.appendChild(readMoreBtn);
+    });
+
+    // Modal close functionality
+    const modal = document.getElementById('textModal');
+    const closeModalBtn = document.getElementById('closeModal');
+
+    closeModalBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      // Reset all buttons aria-expanded
+      cards.forEach(card => {
+        const btn = card.querySelector('.view-btn');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Close modal on clicking outside modal content
+    window.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        cards.forEach(card => {
+          const btn = card.querySelector('.view-btn');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+
+  });
+</script>
+</body>
+</html>

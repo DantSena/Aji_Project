@@ -1,0 +1,696 @@
+:root{
+    --bg-top:#040e25;
+    --bg-mid:#041f36;
+    --bg-bottom:#0b253b;
+    --vignette: rgba(0,0,0,0.45);
+    --star: #cfe9ff;
+    --primary-color: #ffffffb0;
+    --text-color: #ffffff;
+    --button-bg: #2c6e4f;
+    --button-hover-bg: #245a3f;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 45%, var(--bg-bottom) 100%);
+    color: var(--text-color);
+    overflow-x: hidden;
+    padding-top: 10px;
+}
+
+.vignette {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(200% 200% at 50% 50%, transparent 0%, rgba(2, 6, 23, 0.068) 40%, var(--vignette) 100%);
+    mix-blend-mode: multiply;
+}
+
+.stars, .stars::after {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    pointer-events: none;
+}
+
+.stars {
+    background-image: radial-gradient(1px 1px at 10% 20%, var(--star) 50%, transparent 51%),
+                      radial-gradient(1px 1px at 70% 10%, var(--star) 50%, transparent 51%),
+                      radial-gradient(1px 1px at 30% 40%, var(--star) 50%, transparent 51%),
+                      radial-gradient(1px 1px at 90% 60%, var(--star) 50%, transparent 51%);
+    background-size: 200px 200px, 300px 300px, 250px 250px, 220px 220px;
+    opacity: 0.9;
+    animation: twinkle 6s infinite linear;
+    filter: drop-shadow(0 0 6px rgba(200,230,255,0.08));
+}
+
+.stars::after {
+    content: '';
+    background-image: radial-gradient(1px 1px at 20% 60%, rgba(255,255,255,0.9) 50%, transparent 51%),
+                      radial-gradient(1px 1px at 40% 10%, rgba(255,255,255,0.85) 50%, transparent 51%),
+                      radial-gradient(1px 1px at 80% 30%, rgba(255,255,255,0.7) 50%, transparent 51%);
+    opacity: 0.6;
+    mix-blend-mode: screen;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.9; }
+    50% { opacity: 0.6; }
+}
+
+.dots {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 4;
+    overflow: hidden;
+}
+
+.dot {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #ffffff;
+    opacity: 0.5;
+    animation: float-dot linear infinite;
+}
+
+@keyframes float-dot {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(50px, -30px); }
+    50% { transform: translate(-20px, 40px); }
+    75% { transform: translate(30px, 20px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Header Navigation */
+header {
+  animation: fadeIn 3s ease-in-out;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 10;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+nav#header {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+nav#header a {
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav#header a:hover {
+    background-color: rgba(44, 110, 79, 0.15);
+}
+
+nav#header a.active,
+nav#header a.highlight {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Hero Section */
+main.hero {
+  animation: fadeIn 3s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1500px;
+  margin: 120px auto 200px;
+  padding: 0 80px;
+  padding-top: 30px;
+  padding-bottom: 35px;
+  gap: 40px;
+}
+
+.hero-left {
+    flex: 1;
+    max-width: 670px;
+}
+
+.hero-left h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #9ecffd;
+    margin-bottom: 10px;
+}
+
+.hero-left p {
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-bottom: 25px;
+}
+
+.btn-portfolio {
+    background-color: var(--button-bg);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-portfolio:hover {
+    background-color: var(--button-hover-bg);
+}
+
+/* Hero right image placeholder */
+.hero-right {
+    flex: 1;
+    max-width: 500px;
+    height: 400px;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 2px dashed #cccccc00; /* hanya pembatas */
+    display: flex;             
+    justify-content: center;   
+    align-items: center;      
+  }
+  
+  .hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0);
+  }
+  
+
+/* SECTION: Identitas Diri */
+.identity {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 1rem;
+    border-radius: 16px;
+    margin: 7rem auto;
+    max-width: 800px;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    animation: fadeIn 3s ease-in-out;
+  }
+  
+  .identity h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #4682B4;
+    padding-bottom: 0.5rem;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  .identity ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 kolom kiri-kanan */
+    gap: 1rem 2rem;
+  }
+  
+  .identity li {
+    display: grid;
+    grid-template-columns: 120px auto; /* label lebih kecil, isi fleksibel */
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    align-items: start;
+  }
+  
+  .identity .label {
+    color: #fffd7e;
+    font-weight: bold;
+  }
+  
+  .identity .value {
+    color: #ffffff;
+  }
+
+  .contact-section {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 45px 0px;
+  }
+  
+  /* Judul */
+  .contact-section h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    margin-top: 3px;
+    text-align: center;       /* biar rata kiri */
+    margin-right: 192px;      /* jarak aman dari tepi */
+  }
+  
+  /* Container ikon */
+  .social-icons {
+    display: flex;
+    justify-content: left; /* rata kiri */
+    gap: 30px;                   /* jarak antar ikon */
+    flex-wrap: wrap;
+  }
+  
+  /* Ikon medsos */
+  .social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    background: #162d4a;
+    border-radius: 50%;
+    font-size: 22px;
+    color: #fff;
+    transition: 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+  
+  /* Hover efek */
+  .social-icons a:hover {
+    transform: translateY(-5px);
+    background: #1d4ed8;
+  }
+  
+  /* Tambahan baru: tooltip kecil */
+  .social-icons a::after {
+    content: attr(data-label); /* ambil teks dari atribut data-label */
+    position: absolute;
+    bottom: -28px;
+    font-size: 12px;
+    color: #fff;
+    background: rgba(0,0,0,0.6);
+    padding: 3px 6px;
+    border-radius: 4px;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: 0.3s;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  
+  /* Tampilkan tooltip saat hover */
+  .social-icons a:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+/* Footer */
+footer {
+    text-align: center;
+    color: var(--text-color);
+    margin-top: 55px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .contact-section h2 {
+        font-size: 26px;
+        margin-right: 197px; 
+      }
+      .social-icons {
+        margin-left: 33px;
+        gap: 25px;                   /* jarak antar ikon */
+      }
+    .hero-left h1 {
+        margin-left: 33px;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    .social-icons a {
+        width: 41px;
+        height: 41px;
+        font-size: 19px;
+      }
+
+    .hero-left p {
+        margin-left: 33px;
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--text-color);
+        margin-bottom: 25px;
+    }
+    .btn-portfolio {
+        margin-left: 33px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section h2 {
+        font-size: 23px;
+        margin-right: 100px; 
+      }
+      .social-icons {
+        margin-left: 30px;
+        gap: 10px;                   /* jarak antar ikon */
+      }
+      .social-icons a {
+        width: 25px;
+        height: 25px;
+        font-size: 15px;
+      }
+    main.hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1500px;
+        margin: 50px auto 0px;
+        padding: 0 80px;
+        padding-top: 30px;
+        padding-bottom: 3px;
+        gap: 40px;
+    }
+    .hero-left h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    .hero-left p {
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: var(--text-color);
+        margin-bottom: 25px;
+    }
+    .btn-portfolio {
+        background-color: var(--button-bg);
+        color: white;
+        border: none;
+        padding: 12px 28px;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .identity {
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 1rem;
+        border-radius: 12px;
+        margin: 5px auto 0px;
+        max-width: 600px;
+        color: #ffffff;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+      }
+      
+      .identity h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+        border-bottom: 2px solid #4682B4;
+        padding-bottom: 0.5rem;
+        color: #ffffff;
+        text-align: center;
+      }
+      
+      .identity ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2 kolom kiri-kanan */
+        gap: 1rem 2rem;
+      }
+      
+      .identity li {
+        display: grid;
+        grid-template-columns: 120px auto; /* label lebih kecil, isi fleksibel */
+        gap: 0.5rem;
+        font-size: 0.7rem;
+        align-items: start;
+      }
+      
+      .identity .label {
+        color: #fffd7e;
+        font-weight: bold;
+      }
+      
+      .identity .value {
+        color: #ffffff;
+      }
+}
+@media (max-width: 730px) {
+    .social-icons a {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+      }
+      
+    nav#header {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        font-weight: 600;
+        font-size: 10px;
+    }
+    
+    nav#header a {
+        color: var(--primary-color);
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+    main.hero {
+        flex-direction: column-reverse;
+        margin: 50px 20px 40px;
+        padding: 8px 12px;
+    }
+    .hero-right {
+        width: 100%;
+        height: 300px;
+        margin-bottom: 5px; /* ganti margin-top jadi margin-bottom biar rapi */
+    }
+    .hero-left {
+        max-width: 100%;
+        text-align: center; /* Judul tetap center */
+        padding: 0 15px;    /* biar ada jarak aman kanan kiri */
+    }
+    
+    .hero-left h1 {
+        font-size: 2rem;
+        margin: 10px auto 15px;
+        padding: 0;
+    }
+    
+    .hero-left p {
+        font-size: 0.95rem;
+        font-weight: 400;
+        color: var(--text-color);
+        margin: 0 auto 25px;
+        text-align: center;        /* biar rapi kanan kiri */
+        line-height: 1.6;
+        width: 100%;                /* penuh sesuai container */
+        max-width: none;            /* hapus batasan lebar kecil */
+    }
+    .btn-portfolio {
+        background-color: var(--button-bg);
+        color: white;
+        border: none;
+        padding: 12px 28px;
+        font-size: 1rem;
+        font-weight: 600; /* ganti 100pc jadi normal */
+        border-radius: 25px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: block;       /* bikin tombol jadi blok */
+        margin: 0 auto;       /* otomatis center */
+        text-align: center;   /* pastikan isi tombol ketengah */
+    }
+    .identity {
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 0.8rem 1rem;
+        border-radius: 10px;
+        margin: 15px auto 0px;
+        max-width: 500px; /* lebih kecil */
+        color: #ffffff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+    }
+    
+    .identity h2 {
+        font-size: 1.2rem;  /* lebih kecil */
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #4682B4; /* garis lebih tipis */
+        padding-bottom: 0.3rem;
+        color: #ffffff;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+    
+    .identity ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* tetap 2 kolom */
+        gap: 0.6rem 1.2rem; /* jarak antar item lebih rapat */
+    }
+    
+    .identity li {
+        display: grid;
+        grid-template-columns: 90px auto; /* label lebih kecil */
+        gap: 0.3rem;
+        font-size: 0.75rem;  /* ukuran teks lebih kecil */
+        align-items: start;
+    }
+    
+    .identity .label {
+        color: #fffd7e;
+        font-weight: 600;
+    }
+    
+    .identity .value {
+        color: #ffffff;
+        line-height: 1.3;
+    }   
+}
+@media (max-width: 375px) {
+    .contact-section h2 {
+        font-size: 23px;
+        margin-right: 0px; 
+      }
+      .social-icons {
+        margin-left: 1022px;
+        gap: 8px;                   /* jarak antar ikon */
+      }
+      .social-icons a {
+        margin-right: 2px;
+        width: 1px;
+        height: 1px;
+        font-size: 1px;
+      }
+    nav#header {
+        display: flex;
+        justify-content: center;
+        gap: 6px;                /* jarak antar menu lebih kecil */
+        font-weight: 600;
+        font-size: 9px;          /* font lebih kecil */
+    }
+
+    nav#header a {
+        padding: 6px 8px;        /* padding dikurangi */
+    }
+
+    main.hero {
+        flex-direction: column-reverse;
+        margin: 30px 10px 25px;  /* lebih hemat ruang */
+        padding: 6px 8px;
+    }
+
+    .hero-right {
+        width: 100%;
+        height: 250px;           /* lebih kecil */
+        margin-bottom: 5px;
+    }
+
+    .hero-left {
+        max-width: 100%;
+        text-align: center;
+        padding: 0 10px;         /* kurangi padding */
+    }
+
+    .hero-left h1 {
+        font-size: 1.6rem;       /* perkecil judul */
+        margin: 8px auto 10px;
+    }
+
+    .hero-left p {
+        font-size: 0.8rem;       /* perkecil font paragraf */
+        line-height: 1.4;        /* rapat tapi tetap terbaca */
+        margin: 0 auto 15px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .btn-portfolio {
+        padding: 8px 20px;       /* tombol lebih kecil */
+        font-size: 0.85rem;
+        border-radius: 20px;
+        margin: 0 auto 10px;
+    }
+
+    .identity {
+        padding: 0.6rem 0.8rem;  /* lebih kecil */
+        border-radius: 8px;
+        margin: 10px auto 0px;
+        max-width: 95%;          /* hampir penuh layar */
+    }
+
+    .identity h2 {
+        font-size: 1rem;         /* judul lebih kecil */
+        margin-bottom: 0.6rem;
+        padding-bottom: 0.2rem;
+    }
+
+    .identity ul {
+        grid-template-columns: 1fr; /* ubah jadi 1 kolom di layar kecil */
+        gap: 0.4rem 0.6rem;
+    }
+
+    .identity li {
+        grid-template-columns: 80px auto; 
+        font-size: 0.7rem;
+        gap: 0.3rem;
+    }
+}
+@media (max-width: 325px) {
+    .social-icons a {
+        margin-right: 1px;
+        width: 1px;
+        height: 1px;
+        font-size: 1px;
+      }
+}
+@media (max-width: 425px) {
+    .contact-section h2 {
+        font-size: 23px;
+        margin-right: 0px; 
+      }
+      .social-icons {
+        margin-left: 30px;
+        gap: 10px;                   /* jarak antar ikon */
+      }
+      .social-icons a {
+        width: 37px;
+        height: 37px;
+        font-size: 20px;
+      }
+    nav#header {
+        display: flex;
+        justify-content: center;
+        gap: 5px;                /* jarak antar menu lebih kecil */
+        font-weight: 600;
+        font-size: 7px;          /* font lebih kecil */
+    }
+
+    nav#header a {
+        padding: 6px 8px;        /* padding dikurangi */
+    }
+}
